@@ -61,7 +61,7 @@ void SQL::ODBCConnect(void)
 	SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnvr);
 	SQLSetEnvAttr(hEnvr, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, SQL_IS_INTEGER);
 	SQLAllocHandle(SQL_HANDLE_DBC, hEnvr, &hConn);
-	strcpy(szCnIn, strConnectionString.c_str());
+	strcpy_s(szCnIn, strConnectionString.c_str());
 	iResult = SQLDriverConnect(hConn, NULL, (SQLTCHAR*)szCnIn, (SQLSMALLINT)strlen(szCnIn), (SQLTCHAR*)szCnOut, 512, &swStrLen, SQL_DRIVER_NOPROMPT);
 	if (iResult == 0 || iResult == 1)
 		blnConnected = TRUE;
