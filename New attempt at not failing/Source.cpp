@@ -1,7 +1,5 @@
-//Sql.cpp
 #include <iostream>
 #include <fstream>
-#include <conio.h>
 using namespace std;
 struct work
 {
@@ -16,37 +14,38 @@ int main()
 	ofstream file;
 	while (1)
 	{
-		cout << "\nThe c++ Database application\n1-To enter the data\n2-To read the data\n3-To save the data\n";
+		cout << endl;
+		cout << "Ryan Darling   Brandon Roy   Logan Mularski   Presents..." << endl;
+		cout << "\nThe Super Amazing Storage Database!!!\n1 - Enter New Data\n2 - Read Data File\n3 - Save Data File\n";
 		cin >> option;
 		switch (option)
 		{
 		case 1:
-			cout << "Enter the no. of workers:" << endl;
+			cout << "Enter Amount of Workers:" << endl;
 			cin >> numWorkers;
 			for (int i = 0; i < numWorkers; i++)
 			{
-				cout << endl << "Enter the name of the worker:" << endl;
+				cout << endl << "Enter Worker Name:" << endl;
 				cin >> workers[i].name;
-				cout << endl << "Enter the ID no. of the worker:" << endl;
+				cout << endl << "Enter ID Number:" << endl;
 				cin >> workers[i].id;
-				cout << endl << "Enter the job of the worker:" << endl;
+				cout << endl << "Enter Job:" << endl;
 				cin >> workers[i].job;
 				cout << endl;
 			}
 			break;
 		case 2:
 			for (int i = 0; i < numWorkers; i++)
-				cout << endl << "The worker no. " << i + 1 << " is " << workers[i].name << " with an ID no. of " << workers[i].id;
+				cout << endl << "Worker Number: " << i + 1 << " Name: " << workers[i].name << " ID: " << workers[i].id << " Job: " << workers[i].job;
 			cout << endl << endl;
 			break;
 		case 3:
-			file.open("report.txt");
+			file.open("Employee Info.txt");
 			for (int i = 0; i < numWorkers; i++)
-				file << endl << "The worker no. " << i + 1 << " is " << workers[i].name << " with an ID no. of " << workers[i].id << endl;
+				file << endl << "Worker Number " << i + 1 << " Name: " << workers[i].name << " ID: " << workers[i].id << " Job: " << workers[i].job << endl;
 			file << endl;
 			file.close();
 			cout << "The file is saved" << endl;
-			_getch();
 			break;
 		}
 	}
