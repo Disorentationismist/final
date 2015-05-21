@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 struct work
 {
-	char name[100];
+	string name;
 	int id;
-	char job[10];
+	string job;
 }workers[10];
 int main()
 {
@@ -26,11 +27,13 @@ int main()
 			for (int i = 0; i < numWorkers; i++)
 			{
 				cout << endl << "Enter Worker Name:" << endl;
-				cin >> workers[i].name;
+				cin.get();
+				getline(cin, workers[i].name);
 				cout << endl << "Enter ID Number:" << endl;
 				cin >> workers[i].id;
 				cout << endl << "Enter Job:" << endl;
-				cin >> workers[i].job;
+				cin.get();
+				getline(cin, workers[i].job);
 				cout << endl;
 			}
 			break;
